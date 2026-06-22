@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>IG 私訊聯繫｜haluuuu520</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, #ffe4ef 0%, transparent 35%),
+        linear-gradient(135deg, #fff7fa 0%, #f4f0ff 45%, #eef6ff 100%);
+      color: #222;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 28px;
+      padding: 34px 24px 28px;
+      text-align: center;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+    }
+
+    .avatar {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9ac8, #b8d4ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      font-weight: 800;
+      color: white;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 0 0 10px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #666;
+      margin: 0 0 22px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 16px;
+      margin-bottom: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .backup {
+      display: block;
+      color: #666;
+      font-size: 14px;
+      text-decoration: underline;
+      margin-top: 8px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #888;
+      margin-top: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="avatar">H</div>
+
+    <h1>IG 私訊聯繫</h1>
+
+    <p>
+      點下方按鈕開啟 Instagram 私訊。<br>
+      若畫面卡住，請改點 IG 主頁再按「發送訊息」。
+    </p>
+
+    <button id="openDm" class="btn">
+      開啟 IG 私訊
+    </button>
+
+    <a class="backup" href="https://www.instagram.com/haluuuu520_/" target="_blank" rel="noopener">
+      私訊打不開？前往 IG 主頁
+    </a>
+
+    <div class="note">
+      IG：haluuuu520_
+    </div>
+  </main>
+
+  <script>
+    const igDmLink = "https://ig.me/m/haluuuu520_";
+    const igProfileLink = "https://www.instagram.com/haluuuu520_/";
+
+    const androidIntent =
+      "intent://ig.me/m/haluuuu520#Intent;scheme=https;package=com.instagram.android;S.browser_fallback_url=https%3A%2F%2Fig.me%2Fm%2Fhaluuuu520_;end";
+
+    document.getElementById("openDm").addEventListener("click", function () {
+      const ua = navigator.userAgent || "";
+      const isAndroid = /Android/i.test(ua);
+
+      if (isAndroid) {
+        window.location.href = androidIntent;
+      } else {
+        window.location.href = igDmLink;
+      }
+
+      setTimeout(function () {
+        window.location.href = igProfileLink;
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
